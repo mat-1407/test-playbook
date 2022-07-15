@@ -1,0 +1,7 @@
+- name: "Test Ansible ENV"
+  hosts: all
+  remote_user: root
+  tasks:
+  - name: Set default value to Undefined, if the variable is not defined
+    debug:
+      msg: "AZURE_RESOURCEGROUP: {{ lookup('ansible.builtin.env', 'AZURE_RESOURCEGROUP') }} is the vars."
